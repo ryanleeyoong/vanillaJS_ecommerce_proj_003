@@ -1,7 +1,21 @@
-import data from "../data.js";
+//import data from "../data.js";
 const HomeScreen = {
-    render: () => {
-        const { products } = data;
+    render: async () => {
+        //const { products } = data;
+        const response = await fetch("http://localhost:5001/api/products", {
+            headers:{
+                "Content-Type":"application/json",
+            },
+        });
+        if(!response || !response.ok) {
+            return `<div>Error in getting data</div>`;
+        }
+        /* 
+        call json function to return promise, await will convert that 
+        promise into real data and save that data into products variable
+        */
+        const products = await response.json();
+
         return `
         <ul class = "products">
             ${products.map( product => `

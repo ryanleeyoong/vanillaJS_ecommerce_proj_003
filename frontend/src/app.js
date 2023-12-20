@@ -31,7 +31,7 @@ const routes = {
         call the render key in the respective screen object, that will 
         return the values of the anonymous function. 
 */
-const router = () =>{
+const router = async() =>{
 
     const request = parseRequestURL();
     const parseUrl = 
@@ -41,7 +41,8 @@ const router = () =>{
 
     const screen = routes[parseUrl]? routes[parseUrl]: Error404Screen;
     const main = document.getElementById("main-container");
-    main.innerHTML = screen.render();
+    //In order to use the values returned by an async function, await is used.
+    main.innerHTML = await screen.render();
 };
 
 /* 
