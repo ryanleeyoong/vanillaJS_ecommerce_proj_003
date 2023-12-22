@@ -62,3 +62,83 @@ before excecuting the rest of the code.
 
 An asynchronous client calls a function and does not wait for it to return
 before excecuting the rest of the code.
+
+### JS variable and function hoisting(wtf?)
+
+JS will automatically hoist variables and functions to the top of their scope(local/global)
+https://medium.com/@codingsam/hoisting-one-of-the-trickiest-javascript-features-edefb745a058
+
+### JS template literals
+
+### JS map function
+
+### JS Asynchronous operations in the browser
+
+JavaScript is "single-threaded", "non-blocking", and "asynchronous".
+
+Single-threaded: The language can execute only one instrucion at a time
+
+Non-blocking: The language does not wait for a specific previous instruction
+to finish before it moves to the next one. This ensures that no instruction
+blocks or obstructs the execution of subsequent instructions.
+
+Asynchronous: The language can handle a large number of tasks at a time. It is
+a feature of multi-threaded languages, but JS is able to achieve it using with
+a single-thread.
+
+The JavaScript Engine: For a browser to interpret JS code it needs to have a JS
+Engine, where it can accept JS code, analyse it, and transform it into instructions
+the device will understand. You can find the JS V8 Engine in the JS Runtime in
+Node.js. The JS runtime is the environment that contains all the resouce necessary
+for the execution of a JS program.
+
+Chrome: V8 Engine
+Firefox: Spidermonkey
+Safari: JavaScriptCore
+
+Call stack
+It is a "Stack" data structure that operates with two key operations.
+"Push" and "Pop". Push adds new functions to the top of the stack. Pop
+removes a function from the top of the stack. It works like (LIFO) last
+in first out. When JS engine receives JS code, it parses the code and places
+the first function it encounters(that is called) into the call stack.
+And if the JS engine notices the functions calls other functions, it will
+stack it on top of the call stack.
+
+Asynchronous operations and web APIs
+Whenever JS encounters asynchronous instructions like requests to third-party
+sites, or timer-based actions, it seeks assistance. To achieve this, JavaScript
+uses the browser’s provided Web Application Programming Interfaces (Web APIs).
+The Web APIs are a set of functions provided by the browser that the JavaScript
+engine can utilize. They include examples such as Document Object Model (DOM)
+manipulation methods, fetch, setInterval, setTimeout, promises, async-await
+functions, and more.
+
+Callbacks
+A callback is any function that is a parameter of an async function,
+which the async function invokes to complete its operation. It's important,
+because when the async function completes it's process and returns the data,
+the callback function is called to do an action with the data.
+
+Callback queue
+The callback functions that will be excuted when the async function
+completes will be added to the callback queue. It is a "Queue" data structure
+which works with the First In First Out (FIFO) approach. This means that
+the first callback added to that queue is going to be the first callback
+to leave.
+
+Event loops
+The event loop is a loop that continuously "checks if the call stack is empty".
+When the call stack is not empty, it allows the ongoing process to continue.
+But "when the call stack becomes empty", the "event loop fetches the task at
+the top of the callback queue" and "adds it to the call stack".
+The event loop runs continuously as long as the program is running,
+always performing its function until the callback queue is completely empty.
+
+https://www.freecodecamp.org/news/javascript-asynchronous-operations-in-the-browser/
+
+### How promises work in JS
+
+Callback Pyramid of Doom
+
+https://www.freecodecamp.org/news/guide-to-javascript-promises/#:~:text=In%20JavaScript%2C%20a%20Promise%20is,of%20promises%20in%20real%20life.

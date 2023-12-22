@@ -1,20 +1,22 @@
+import axios from 'axios';
 //import data from "../data.js";
 const HomeScreen = {
     render: async () => {
         //const { products } = data;
-        const response = await fetch("http://localhost:5001/api/products", {
+        const response = await axios({
+            url: 'http://localhost:5001/api/products', 
             headers:{
-                "Content-Type":"application/json",
+                'Content-Type':'application/json',
             },
         });
-        if(!response || !response.ok) {
+        if(!response || response.statusText !== 'OK') {
             return `<div>Error in getting data</div>`;
         }
         /* 
         call json function to return promise, await will convert that 
         promise into real data and save that data into products variable
         */
-        const products = await response.json();
+        const products = response.data;
 
         return `
         <ul class = "products">
