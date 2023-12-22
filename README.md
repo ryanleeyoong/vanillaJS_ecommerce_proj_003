@@ -142,3 +142,18 @@ https://www.freecodecamp.org/news/javascript-asynchronous-operations-in-the-brow
 Callback Pyramid of Doom
 
 https://www.freecodecamp.org/news/guide-to-javascript-promises/#:~:text=In%20JavaScript%2C%20a%20Promise%20is,of%20promises%20in%20real%20life.
+
+### Webpack
+
+Webpack is used to combine the many JS files in your app into one main.js file
+
+## Axios
+
+Using Axios is better then fetch (will research why later) to do AJAX requests
+
+### Babel Transpiler
+
+Babel is a compiler that translates ES6 to ES5 (Transpiler). It is used
+to transpile ES6 into traditional JS(ES5). This used to be more relevent
+back in 2016 - 2018 when Node still does not have wide support for ES6.
+We now also have alternatives like TypeScript compiler.
