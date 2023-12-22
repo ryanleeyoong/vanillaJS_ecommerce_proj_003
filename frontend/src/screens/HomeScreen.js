@@ -1,26 +1,26 @@
 import axios from 'axios';
-//import data from "../data.js";
+// import data from "../data.js";
 const HomeScreen = {
-    render: async () => {
-        //const { products } = data;
-        const response = await axios({
-            url: 'http://localhost:5001/api/products', 
-            headers:{
-                'Content-Type':'application/json',
-            },
-        });
-        if(!response || response.statusText !== 'OK') {
-            return `<div>Error in getting data</div>`;
-        }
-        /* 
-        call json function to return promise, await will convert that 
+  render: async () => {
+    // const { products } = data;
+    const response = await axios({
+      url: 'http://localhost:5001/api/products',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    if (!response || response.statusText !== 'OK') {
+      return '<div>Error in getting data</div>';
+    }
+    /*
+        call json function to return promise, await will convert that
         promise into real data and save that data into products variable
         */
-        const products = response.data;
+    const products = response.data;
 
-        return `
+    return `
         <ul class = "products">
-            ${products.map( product => `
+            ${products.map((product) => `
                 <li>
                     <div class="product">
                         <a href="/#/product/${product._id}">
@@ -41,6 +41,6 @@ const HomeScreen = {
                 </li>
             `).join('\n')}
         `;
-    },
+  },
 };
 export default HomeScreen;

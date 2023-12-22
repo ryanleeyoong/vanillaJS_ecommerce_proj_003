@@ -157,3 +157,7 @@ Babel is a compiler that translates ES6 to ES5 (Transpiler). It is used
 to transpile ES6 into traditional JS(ES5). This used to be more relevent
 back in 2016 - 2018 when Node still does not have wide support for ES6.
 We now also have alternatives like TypeScript compiler.
+
+### Code linting
+
+Code linting helps developers find errors faster like red underline.
