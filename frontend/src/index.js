@@ -41,6 +41,7 @@ const router = async () => {
   const main = document.getElementById('main-container');
   // In order to use the values returned by an async function, await is used.
   main.innerHTML = await screen.render();
+  await screen.after_render();
 };
 
 /*
