@@ -161,3 +161,7 @@ We now also have alternatives like TypeScript compiler.
 ### Code linting
 
 Code linting helps developers find errors faster like red underline.
+
+### JS Local Storage
+
+### JS Three Dot Operator
