@@ -162,6 +162,22 @@ We now also have alternatives like TypeScript compiler.
 
 Code linting helps developers find errors faster like red underline.
 
-### JS Local Storage
+### JS Local Storage vs Session Storage vs Cookies
+
+localStorage is a property that allows JavaScript sites and apps to save
+key-value pairs in a web browser with no expiration date. This means the
+data stored persists even after the user closes the browser or restarts
+the computer.
+
+localStorage is a window object property, which makes it a global object
+that can interact with and manipulate the browser window. It can also be
+used in combination with other window properties and methods.
+
+### Window Object
+
+The window object represents an open window in a browser.
+If a document contain frames (<iframe> tags), the browser creates one
+window object for the HTML document, and one additional window object
+for each frame.
 
 ### JS Three Dot Operator
